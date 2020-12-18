@@ -25,7 +25,6 @@ export default {
   },
   data() {
     return {
-      series: [],
       chartOptions: {
         chart: {
           height: 350,
@@ -69,14 +68,16 @@ export default {
       }
     };
   },
-  mounted() {
-    let data = [
-      {
-        name: "candle",
-        data: this.$store.getters["getDataCandelGraph"]
-      }
-    ];
-    this.series = data;
+  computed: {
+    series() {
+      let data = [
+        {
+          name: "candle",
+          data: this.$store.getters["getDataCandelGraph"]
+        }
+      ];
+      return data;
+    }
   }
 };
 </script>

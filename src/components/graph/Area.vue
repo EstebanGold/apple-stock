@@ -20,7 +20,7 @@ export default {
   },
   data() {
     return {
-      series: [],
+      // series: [],
       chartOptions: {
         chart: {
           id: "area-datetime",
@@ -90,12 +90,14 @@ export default {
       }
     };
   },
-  mounted() {
-    let data = [];
-    data.push({
-      data: this.$store.getters["getDataAreaGraph"]("High")
-    });
-    this.series = data;
+  computed: {
+    series() {
+      let data = [];
+      data.push({
+        data: this.$store.getters["getDataAreaGraph"]("High")
+      });
+      return data;
+    }
   }
 };
 </script>

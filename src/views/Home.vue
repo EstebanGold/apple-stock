@@ -2,6 +2,20 @@
   <div class="home">
     <h1>APPLE STOCK APP</h1>
     <br />
+    <div id="days-buttons">
+      <select
+        name="Dates"
+        id="dates-select"
+        v-model="typeDate"
+        @change="changeDate"
+      >
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="montly">Montly</option>
+      </select>
+
+      <span>{{ typeDate }}</span>
+    </div>
     <div>
       <area-graph />
     </div>
@@ -21,8 +35,19 @@ export default {
     AreaGraph,
     CandelGraph
   },
+  data() {
+    return {
+      typeDate: "daily"
+    };
+  },
   created() {
     this.$store.dispatch("getDates", "daily");
+  },
+  methods: {
+    changeDate() {
+      // console.log(this.selected);
+      this.$store.dispatch("getDates", this.typeDate);
+    }
   }
 };
 </script>
