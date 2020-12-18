@@ -93,7 +93,7 @@ export default {
   mounted() {
     let data = [];
     data.push({
-      data: this.$store.getters["getDataGraph"]("High")
+      data: this.$store.getters["getDataAreaGraph"]("High")
     });
     this.series = data;
   }

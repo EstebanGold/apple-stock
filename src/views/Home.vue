@@ -5,16 +5,21 @@
     <div>
       <area-graph />
     </div>
+    <div>
+      <candel-graph :title="'Apple Stock'" />
+    </div>
   </div>
 </template>
 
 <script>
-import AreaGraph from "@/components/AreaGraph.vue";
+import AreaGraph from "@/components/graph/Area.vue";
+import CandelGraph from "@/components/graph/Candel.vue";
 
 export default {
   name: "Home",
   components: {
-    AreaGraph
+    AreaGraph,
+    CandelGraph
   },
   created() {
     this.$store.dispatch("getDates", "daily");

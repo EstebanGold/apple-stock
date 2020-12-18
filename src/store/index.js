@@ -16,9 +16,17 @@ export default new Vuex.Store({
     getMaxDate: state => {
       return state.dates[state.dates.length - 1].Date;
     },
-    getDataGraph: state => typePrice => {
+    getDataAreaGraph: state => typePrice => {
       return state.dates.map(date => {
         return [new Date(date.Date).getTime(), date[typePrice]];
+      });
+    },
+    getDataCandelGraph: state => {
+      return state.dates.map(date => {
+        return {
+          x: date.Date,
+          y: [date.Open, date.High, date.Low, date.Close]
+        };
       });
     }
   },
