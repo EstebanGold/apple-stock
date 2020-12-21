@@ -34,6 +34,11 @@ export default {
           text: `CandleStick Chart - ${this.title}`,
           align: "left"
         },
+        candlestick: {
+          wick: {
+            useFillColor: true
+          }
+        },
         annotations: {
           xaxis: [
             {

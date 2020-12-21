@@ -45,7 +45,6 @@ export default {
   },
   methods: {
     changeDate() {
-      // console.log(this.selected);
       this.$store.dispatch("getDates", this.typeDate);
     }
   }
