@@ -70,7 +70,7 @@ export default {
         },
         xaxis: {
           type: "datetime",
-          min: new Date(this.$store.getters["getMinDate"]).getTime(),
+          min: this.min,
           tickAmount: 6
         },
         tooltip: {
@@ -91,6 +91,9 @@ export default {
     };
   },
   computed: {
+    min() {
+      return new Date(this.$store.getters["getMinDate"]).getTime();
+    },
     series() {
       let data = [];
       data.push({

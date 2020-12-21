@@ -36,8 +36,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    getDates: ({ commit }, typeDate) => {
-      commit("add_dates", stock.getData(typeDate));
+    getDates: async ({ commit }, typeDate) => {
+      // commit("add_dates", stock.getData(typeDate));
+      let dates = await stock.getDataURL(typeDate);
+
+      commit("add_dates", dates);
     }
   },
   modules: {}
