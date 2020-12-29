@@ -78,7 +78,7 @@ export default {
       let data = [
         {
           name: "candle",
-          data: this.$store.getters["getDataCandelGraph"]
+          data: this.$store.getters["getDataCandleGraph"]
         }
       ];
       return data;

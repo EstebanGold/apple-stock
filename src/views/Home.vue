@@ -20,20 +20,21 @@
       <area-graph />
     </div>
     <div>
-      <candel-graph :title="'Apple Stock'" />
+      <candle-graph :title="'Apple Stock'" />
     </div>
   </div>
 </template>
 
 <script>
 import AreaGraph from "@/components/graph/Area.vue";
-import CandelGraph from "@/components/graph/Candel.vue";
+import CandleGraph from "@/components/graph/Candle.vue";
+import transform from "@/data/transform";
 
 export default {
   name: "Home",
   components: {
     AreaGraph,
-    CandelGraph
+    CandleGraph
   },
   data() {
     return {

@@ -21,7 +21,7 @@ export default new Vuex.Store({
         return [new Date(date.Date).getTime(), date[typePrice]];
       });
     },
-    getDataCandelGraph: state => {
+    getDataCandleGraph: state => {
       return state.dates.map(date => {
         return {
           x: date.Date,

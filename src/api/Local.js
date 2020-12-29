@@ -8,7 +8,8 @@ const data = {
   montly
 };
 
-const URL = "https://raw.githubusercontent.com/EstebanGold/apple-stock/main/src/data/";
+const URL =
+  "https://raw.githubusercontent.com/EstebanGold/apple-stock/main/src/data/";
 
 export const Local = {
   getData: typeDate => {
